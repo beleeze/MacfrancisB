@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  html, body { margin:0; padding:0; background:#0E0E10; }
+  body { font-family:'Bricolage Grotesque', Helvetica, sans-serif; color:#111113; -webkit-font-smoothing:antialiased; }
+  * { box-sizing:border-box; }
+  a { color:#1B5BFF; text-decoration:none; }
+  a:hover { color:#0E0E10; text-decoration:none; }
+  @keyframes tick { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+  @keyframes bob { 0%,100% { transform:translateY(0) rotate(-6deg); } 50% { transform:translateY(-14px) rotate(4deg); } }
+  @keyframes bob2 { 0%,100% { transform:translateY(-8px) rotate(8deg); } 50% { transform:translateY(6px) rotate(-4deg); } }
+</style>
+</helmet>
+<template id="__bundler_thumbnail">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#FFD64A"/><text x="100" y="130" font-family="Helvetica, sans-serif" font-size="82" font-weight="700" fill="#0E0E10" text-anchor="middle">MB</text></svg>
+</template>
+
+<div style="width:100%; background:#0E0E10; padding:clamp(8px,1.4vw,18px);">
+<div style="background:#F3F1EC; border-radius:clamp(18px,2.4vw,34px); overflow:hidden;">
+
+  <div style="position:sticky; top:0; z-index:40; padding:clamp(10px,1.4vw,16px) clamp(14px,2.4vw,28px); display:flex; align-items:center; justify-content:space-between; gap:16px; background:rgba(243,241,236,0.88); backdrop-filter:blur(10px);">
+    <a href="#top" style="display:flex; align-items:center; gap:10px; color:#111113;">
+      <span style="width:26px; height:26px; border-radius:9999px; background:#FF5147; display:block;"></span>
+      <span style="font-family:'Space Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase;">MB / sysadmin</span>
+    </a>
+    <div style="display:flex; align-items:center; gap:clamp(6px,1.2vw,10px); flex-wrap:wrap;">
+      <a href="#stack" style="font-family:'Space Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#111113; padding:9px 14px; border-radius:9999px; background:#E7E4DC; transition:background 150ms ease;" style-hover="background:#FFD64A; color:#111113">Stack</a>
+      <a href="#work" style="font-family:'Space Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#111113; padding:9px 14px; border-radius:9999px; background:#E7E4DC; transition:background 150ms ease;" style-hover="background:#FFD64A; color:#111113">Work</a>
+      <a href="#certs" style="font-family:'Space Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#111113; padding:9px 14px; border-radius:9999px; background:#E7E4DC; transition:background 150ms ease;" style-hover="background:#FFD64A; color:#111113">Certs</a>
+      <a href="mailto:macfrancis.belchi@outlook.com" style="font-family:'Space Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#F3F1EC; padding:9px 16px; border-radius:9999px; background:#111113; transition:background 150ms ease;" style-hover="background:#1B5BFF; color:#F3F1EC">Say hi</a>
+    </div>
+  </div>
+
+  <section id="top" style="position:relative; padding:clamp(28px,5vw,72px) clamp(18px,4vw,56px) clamp(40px,6vw,80px); overflow:hidden;">
+    <div style="font-family:'Space Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#807E83;">Calgary, Alberta</div>
+    <h1 style="margin:clamp(14px,2vw,22px) 0 0; font-size:clamp(52px,13.5vw,190px); line-height:0.86; font-weight:800; letter-spacing:-0.045em; text-transform:uppercase;">
+      <span style="display:block;">Macfrancis</span>
+      <span style="display:block; color:#1B5BFF;">Belchi</span>
+    </h1>
+
+    <div style="margin-top:clamp(24px,3.4vw,44px); display:flex; flex-wrap:wrap; align-items:flex-end; gap:clamp(20px,3vw,44px);">
+      <div style="position:relative; flex:0 0 auto; width:clamp(180px,26vw,300px);">
+        <div style="border-radius:24px; overflow:hidden; background:#DDD9D0; transform:rotate(-3deg); box-shadow:0 18px 40px rgba(14,14,16,0.18); transition:transform 300ms cubic-bezier(.2,.8,.2,1);" style-hover="transform:rotate(0deg) scale(1.03)">
+          <img src="assets/avatar-pixel.png" alt="Pixel-art portrait of Macfrancis Belchi" style="display:block; width:100%; height:auto;">
+        </div>
+        <div style="position:absolute; top:-26px; right:-30px; width:clamp(64px,9vw,104px); height:clamp(64px,9vw,104px); border-radius:9999px; background:#FFD64A; display:{{ stickerDisplay }}; align-items:center; justify-content:center; text-align:center; font-family:'Space Mono', monospace; font-size:clamp(9px,1.2vw,13px); font-weight:700; line-height:1.15; letter-spacing:0.04em; text-transform:uppercase; animation:bob 6s ease-in-out infinite;">AZ<br>104</div>
+        <div style="position:absolute; bottom:-22px; left:-26px; width:clamp(58px,8vw,92px); height:clamp(58px,8vw,92px); border-radius:9999px; background:#FF5147; color:#F3F1EC; display:{{ stickerDisplay }}; align-items:center; justify-content:center; font-family:'Space Mono', monospace; font-size:clamp(9px,1.1vw,12px); font-weight:700; letter-spacing:0.06em; text-transform:uppercase; animation:bob2 7.5s ease-in-out infinite;">CCNA</div>
+      </div>
+      <p style="flex:1 1 340px; min-width:0; margin:0; font-size:clamp(18px,2.3vw,28px); line-height:1.35; font-weight:600; letter-spacing:-0.015em; max-width:26ch; text-wrap:pretty;">Systems Administrator. Five years of virtualization, identity, endpoints and the occasional 2 a.m. rescue.</p>
+      <div style="flex:0 0 auto; display:flex; flex-direction:column; gap:10px; font-family:'Space Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase;">
+        <a href="mailto:macfrancis.belchi@outlook.com" style="color:#111113;" style-hover="color:#1B5BFF">macfrancis.belchi@outlook.com</a>
+      </div>
+    </div>
+  </section>
+
+  <div style="background:#111113; padding:clamp(12px,1.6vw,18px) 0; overflow:hidden; white-space:nowrap;">
+    <div style="display:inline-flex; gap:0; animation:tick 34s linear infinite; will-change:transform;">
+      <span style="font-family:'Space Mono', monospace; font-size:clamp(13px,1.5vw,17px); font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#FFD64A; padding-right:0;">{{ ticker }}</span>
+      <span style="font-family:'Space Mono', monospace; font-size:clamp(13px,1.5vw,17px); font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#FFD64A;">{{ ticker }}</span>
+    </div>
+  </div>
+
+  <section style="padding:clamp(36px,5vw,72px) clamp(18px,4vw,56px);">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(190px,1fr)); gap:clamp(12px,1.6vw,20px);">
+      <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
+        <div style="border-radius:22px; padding:clamp(20px,2.4vw,30px); background:{{ s.bg }}; color:{{ s.fg }}; transition:transform 220ms cubic-bezier(.2,.8,.2,1);" style-hover="transform:translateY(-6px) rotate(-1.5deg)">
+          <div style="font-size:clamp(40px,5.4vw,66px); line-height:0.95; font-weight:800; letter-spacing:-0.04em;">{{ s.value }}</div>
+          <div style="margin-top:12px; font-family:'Space Mono', monospace; font-size:11px; font-weight:700; line-height:1.5; letter-spacing:0.1em; text-transform:uppercase;">{{ s.label }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="stack" style="padding:clamp(20px,3vw,40px) clamp(18px,4vw,56px) clamp(40px,6vw,80px);">
+    <div style="display:flex; align-items:baseline; gap:16px; flex-wrap:wrap;">
+      <h2 style="margin:0; font-size:clamp(32px,6vw,76px); line-height:0.9; font-weight:800; letter-spacing:-0.04em; text-transform:uppercase;">The stack</h2>
+      <span style="font-family:'Space Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#807E83;">hover to poke it</span>
+    </div>
+    <div style="margin-top:clamp(24px,3vw,40px); display:flex; flex-direction:column; gap:clamp(18px,2.4vw,30px);">
+      <sc-for list="{{ skillGroups }}" as="group" hint-placeholder-count="6">
+        <div style="display:flex; flex-wrap:wrap; gap:14px 28px; align-items:flex-start; padding-top:18px; border-top:2px solid #111113;">
+          <div style="flex:0 0 190px; font-family:'Space Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#111113; line-height:1.5;">{{ group.label }}</div>
+          <div style="flex:1 1 400px; min-width:0; display:flex; flex-wrap:wrap; gap:8px;">
+            <sc-for list="{{ group.items }}" as="item" hint-placeholder-count="5">
+              <span style="display:inline-block; padding:9px 16px; border-radius:9999px; background:#E7E4DC; font-size:15px; font-weight:600; letter-spacing:-0.01em; transition:transform 180ms cubic-bezier(.2,.8,.2,1), background 180ms ease;" style-hover="background:#FFD64A; transform:translateY(-4px) rotate(-2deg)">{{ item }}</span>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="work" style="background:#111113; color:#F3F1EC; padding:clamp(40px,6vw,84px) clamp(18px,4vw,56px);">
+    <div style="display:flex; align-items:baseline; gap:16px; flex-wrap:wrap;">
+      <h2 style="margin:0; font-size:clamp(32px,6vw,76px); line-height:0.9; font-weight:800; letter-spacing:-0.04em; text-transform:uppercase; color:#F3F1EC;">Work</h2>
+      <span style="font-family:'Space Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#7A7A80;">tap a role to open it</span>
+    </div>
+    <div style="margin-top:clamp(24px,3vw,40px); display:flex; flex-direction:column; gap:12px;">
+      <sc-for list="{{ roles }}" as="r" hint-placeholder-count="3">
+        <div style="border-radius:22px; background:{{ r.cardBg }}; color:{{ r.cardFg }}; overflow:hidden;">
+          <div onClick="{{ r.toggle }}" style="padding:clamp(18px,2.4vw,30px); display:flex; gap:clamp(14px,2vw,28px); align-items:center; cursor:pointer; user-select:none; -webkit-tap-highlight-color:transparent;">
+            <span style="flex:0 0 auto; width:40px; height:40px; border-radius:9999px; background:{{ r.dotBg }}; color:{{ r.dotFg }}; display:flex; align-items:center; justify-content:center; font-family:'Space Mono', monospace; font-size:13px; font-weight:700;">{{ r.num }}</span>
+            <div style="flex:1 1 auto; min-width:0;">
+              <div style="font-size:clamp(19px,2.4vw,30px); line-height:1.15; font-weight:800; letter-spacing:-0.025em;">{{ r.title }}</div>
+              <div style="margin-top:6px; font-family:'Space Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; opacity:0.72;">{{ r.org }} &middot; {{ r.period }}</div>
+            </div>
+            <span style="flex:0 0 auto; font-size:26px; font-weight:800; transform:{{ r.iconRot }}; transition:transform 240ms cubic-bezier(.2,.8,.2,1);">+</span>
+          </div>
+          <div style="display:grid; grid-template-rows:{{ r.rows }}; transition:grid-template-rows 340ms cubic-bezier(.2,.8,.2,1);">
+            <div style="overflow:hidden;">
+              <ul style="margin:0; padding:0 clamp(18px,2.4vw,30px) clamp(22px,2.6vw,32px) clamp(70px,7vw,86px); list-style:none; display:flex; flex-direction:column; gap:12px;">
+                <sc-for list="{{ r.bullets }}" as="b" hint-placeholder-count="4">
+                  <li style="font-size:15px; line-height:1.6; opacity:0.86; text-wrap:pretty;">{{ b }}</li>
+                </sc-for>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="certs" style="padding:clamp(40px,6vw,84px) clamp(18px,4vw,56px);">
+    <h2 style="margin:0; font-size:clamp(32px,6vw,76px); line-height:0.9; font-weight:800; letter-spacing:-0.04em; text-transform:uppercase;">Certified</h2>
+    <div style="margin-top:clamp(24px,3vw,40px); display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:clamp(12px,1.6vw,18px);">
+      <sc-for list="{{ certs }}" as="c" hint-placeholder-count="6">
+        <a href="{{ c.url }}" target="_blank" rel="noopener" style="border-radius:22px; padding:clamp(20px,2.4vw,28px); background:{{ c.bg }}; color:{{ c.fg }}; display:flex; flex-direction:column; gap:10px; min-height:170px; transition:transform 220ms cubic-bezier(.2,.8,.2,1);" style-hover="transform:translateY(-6px) rotate(1.5deg); color:{{ c.fg }}">
+          <div style="font-family:'Space Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; opacity:0.72;">{{ c.issuer }}</div>
+          <div style="font-size:22px; line-height:1.15; font-weight:800; letter-spacing:-0.025em; text-wrap:pretty;">{{ c.name }}</div>
+          <sc-if value="{{ c.verify }}" hint-placeholder-val="{{ true }}">
+            <div style="margin-top:auto; font-family:'Space Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase;">Verify &rarr;</div>
+          </sc-if>
+        </a>
+      </sc-for>
+    </div>
+    <div style="margin-top:clamp(28px,3.4vw,44px); padding-top:20px; border-top:2px solid #111113; display:flex; flex-wrap:wrap; gap:16px 40px;">
+      <div style="flex:0 0 190px; font-family:'Space Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase;">School</div>
+      <div style="flex:1 1 320px; display:flex; flex-direction:column; gap:8px; font-size:17px; font-weight:600;">
+        <div>Diploma, IT Services &mdash; SAIT, Calgary</div>
+        <div>Bachelor of Engineering &mdash; University of Port Harcourt</div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#1B5BFF; color:#F3F1EC; padding:clamp(40px,6vw,84px) clamp(18px,4vw,56px); display:flex; flex-wrap:wrap; align-items:center; gap:clamp(24px,4vw,56px);">
+    <div style="flex:1 1 320px; min-width:0;">
+      <h2 style="margin:0; font-size:clamp(36px,6.4vw,88px); line-height:0.9; font-weight:800; letter-spacing:-0.045em; text-transform:uppercase;">Let's talk<br>infrastructure</h2>
+      <div style="margin-top:clamp(20px,2.6vw,32px); display:flex; flex-wrap:wrap; gap:12px;">
+        <a href="mailto:macfrancis.belchi@outlook.com" style="padding:14px 24px; border-radius:9999px; background:#FFD64A; color:#111113; font-family:'Space Mono', monospace; font-size:12px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; transition:transform 180ms ease;" style-hover="transform:translateY(-3px); background:#F3F1EC; color:#111113">Email me</a>
+      </div>
+      <div style="margin-top:clamp(22px,2.6vw,32px); font-family:'Space Mono', monospace; font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; opacity:0.78;">Calgary, Alberta T2R 0R1 &middot; English, advanced</div>
+    </div>
+    <div style="flex:0 0 auto; width:clamp(170px,24vw,280px); border-radius:24px; overflow:hidden; transform:rotate(3deg); box-shadow:0 18px 40px rgba(14,14,16,0.28); transition:transform 300ms cubic-bezier(.2,.8,.2,1);" style-hover="transform:rotate(0deg) scale(1.03)">
+      <img src="assets/avatar-poly.png" alt="Low-poly portrait of Macfrancis Belchi" style="display:block; width:100%; height:auto;">
+    </div>
+  </section>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;expandAllRoles&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;showStickers&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+const TICKER_ITEMS = ["Hyper-V", "VMware", "Windows Server", "IAM", "Azure AD", "Intune", "Autopilot", "M365", "Veeam", "PowerShell", "Zscaler", "Fortinet", "Grafana", "ServiceNow", "VLANs & VPNs"];
+
+const SKILL_GROUPS = [
+  { label: "Virtualization & servers", items: ["Hyper-V", "VMware", "Windows Server 2008–2025", "HCI Infrastructure"] },
+  { label: "Identity & cloud", items: ["IAM", "Azure AD", "Active Directory", "Microsoft 365", "Google Cloud Platform"] },
+  { label: "Endpoint & MDM", items: ["Intune", "Autopilot", "Device lifecycle", "Win32 / MSI / DMG / PKG"] },
+  { label: "Security", items: ["Security patching", "Firewall config", "Hardening", "ESET", "Zscaler", "Cisco", "Fortinet"] },
+  { label: "Networking & backup", items: ["VLANs", "VPNs", "Monitoring", "Veeam", "Centreon", "Grafana"] },
+  { label: "Process & people", items: ["PowerShell", "ServiceNow", "JIRA", "SOP creation", "Mentoring"] }
+];
+
+const STATS = [
+  { value: "5", label: "Years in infrastructure", bg: "#FFD64A", fg: "#111113" },
+  { value: "450+", label: "Users supported across NA & Europe", bg: "#111113", fg: "#F3F1EC" },
+  { value: "95%", label: "Fewer vulnerable user alerts", bg: "#FF5147", fg: "#F3F1EC" },
+  { value: "95.1%", label: "Customer satisfaction rating", bg: "#E7E4DC", fg: "#111113" }
+];
+
+const CERT_COLORS = [
+  { bg: "#1B5BFF", fg: "#F3F1EC" },
+  { bg: "#FFD64A", fg: "#111113" },
+  { bg: "#111113", fg: "#F3F1EC" },
+  { bg: "#E7E4DC", fg: "#111113" },
+  { bg: "#FF5147", fg: "#F3F1EC" },
+  { bg: "#E7E4DC", fg: "#111113" }
+];
+
+const CERTS = [
+  { issuer: "Microsoft", name: "AZ-104: Azure Administrator", url: "https://learn.microsoft.com/api/credentials/share/en-us/MacfrancisBelchi-9836/50C68246B38EB7AA?sharingId=DC0E50265AA3E976", verify: true },
+  { issuer: "Cisco", name: "CCNA 200-301: Certified Network Associate", url: "https://cp.certmetrics.com/cisco/en/public/verify/credential/f6d320d4a0d64978bd5f3c1d5c96d1f4", verify: true },
+  { issuer: "Microsoft", name: "SC-900: Security & Compliance", url: "https://learn.microsoft.com/api/credentials/share/en-us/MacfrancisBelchi-9836/27D685205763876D?sharingId=DC0E50265AA3E976", verify: true },
+  { issuer: "Cisco", name: "CCNA — Routing, Switching & Wireless" },
+  { issuer: "Palo Alto", name: "Cybersecurity Foundations & Network Security" },
+  { issuer: "ServiceNow", name: "Platform Essentials" }
+];
+
+const ROLES = [
+  {
+    title: "Senior Systems Administrator",
+    org: "Sidetrade, Calgary",
+    period: "June 2024 – Present",
+    bullets: [
+      "Design, deploy, and manage Hyper-V and HCI virtualization infrastructure, provisioning 88% of all Linux and Windows VM requests for DevOps teams and managing VM lifecycle, cluster health, capacity, and performance.",
+      "Administer Azure AD, on-prem Active Directory, M365, and Intune across the Sidetrade tenant, including identity lifecycle (onboarding/offboarding), group policies, conditional access, and hybrid identity.",
+      "Serve as sole systems administrator and de facto IT lead for 200+ end users across Canada and the USA, plus 250 users in Europe, acting as the escalation point for all complex infrastructure and desk-side support issues.",
+      "Mentor and guide less experienced team members and cross-functional staff on infrastructure best practices, security awareness, and IT procedures, fostering a culture of technical growth and problem ownership.",
+      "Drive endpoint management via Microsoft Intune MDM, including device enrollment, Autopilot provisioning, configuration profiles, and compliance policy enforcement across Windows and other platforms.",
+      "Manage security posture via automated and manual patching for servers and workstations; maintain security tooling including ESET, Zscaler, Cisco, and Fortinet, and enforce hardening standards.",
+      "Built a real-time asset management and infrastructure observability dashboard using Grafana, Docker, and cron jobs pulling from AD across PROD and internal environments, improving capacity planning and visibility.",
+      "Initiated and managed a quarterly phishing simulation program across multiple departments and regions; designed targeted security training that drove a 95% reduction in vulnerable user alerts per Microsoft Security reporting."
+    ]
+  },
+  {
+    title: "Internal Systems Support Specialist",
+    org: "Quorum, Calgary",
+    period: "April 2023 – April 2024",
+    bullets: [
+      "Provided Level 2/3 service desk support across M365, Azure, Salesforce, Google Cloud Platform, and internal infrastructure, achieving a 95.1% customer satisfaction rating while consistently meeting SLA targets.",
+      "Independently led Google Workspace to Microsoft 365 migration: migrated 100+ mailboxes from Gmail to Outlook, overcoming the 100 GB per-mailbox license limit by implementing Online Archiving to scale to approximately 1.5 TB of user data.",
+      "Executed Google Drive to OneDrive migration, meticulously mapping folder structures and user identities source-to-destination, resolving incompatible link references, and securely integrating third-party applications with granular API and user permission controls.",
+      "Contributed to server hardening and penetration testing remediation, applying best-practice recommendations that increased the Microsoft Secure Score from 40% to 55%.",
+      "Developed a SharePoint Cybersecurity Awareness portal centralizing security guidance and training content, improving organizational security posture and reducing risk."
+    ]
+  },
+  {
+    title: "Technical Support Analyst",
+    org: "Dream, Calgary",
+    period: "May 2022 – December 2022",
+    bullets: [
+      "Led workstation configuration, Autopilot enrollment, and deployment rollout, completing hardware provisioning projects ahead of schedule while adhering to corporate security and configuration standards.",
+      "Managed device enrollment and policy enforcement in Microsoft Intune across multiple operating systems, supporting endpoint compliance for remote and on-site users.",
+      "Delivered 25+ onboarding sessions for new hires (on-site and remote), improving IT service adoption and reducing follow-up support tickets by standardizing the onboarding process.",
+      "Maintained ticketing records, followed structured escalation procedures, and created SOPs for common requests to build a scalable support knowledge base."
+    ]
+  }
+];
+
+const ROLE_COLORS = [
+  { cardBg: "#F3F1EC", cardFg: "#111113", dotBg: "#FF5147", dotFg: "#F3F1EC" },
+  { cardBg: "#F3F1EC", cardFg: "#111113", dotBg: "#FFD64A", dotFg: "#111113" },
+  { cardBg: "#F3F1EC", cardFg: "#111113", dotBg: "#1B5BFF", dotFg: "#F3F1EC" }
+];
+
+class Component extends DCLogic {
+  state = { open: 0 };
+  renderVals() {
+    const openAll = this.props.expandAllRoles === true;
+    const stickerDisplay = this.props.showStickers === false ? "none" : "flex";
+    const roles = ROLES.map((r, i) => {
+      const c = ROLE_COLORS[i % ROLE_COLORS.length];
+      const isOpen = openAll || this.state.open === i;
+      return Object.assign({}, r, c, {
+        num: String(i + 1).padStart(2, "0"),
+        rows: isOpen ? "1fr" : "0fr",
+        iconRot: isOpen ? "rotate(45deg)" : "rotate(0deg)",
+        toggle: () => this.setState(st => ({ open: st.open === i ? -1 : i }))
+      });
+    });
+    const certs = CERTS.map((c, i) => Object.assign({}, c, CERT_COLORS[i % CERT_COLORS.length], { url: c.url || "#certs" }));
+    const ticker = TICKER_ITEMS.join("  \u2022  ") + "  \u2022  ";
+    return { ticker, skillGroups: SKILL_GROUPS, stats: STATS, certs, roles, stickerDisplay };
+  }
+}
+</script>
+</body>
+</html>
